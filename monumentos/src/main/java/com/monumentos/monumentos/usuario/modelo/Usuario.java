@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,8 +28,7 @@ public class Usuario implements UserDetails {
 
     @Builder.Default
     private String role = Roles.ROLE_USER;
-
-
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(
@@ -55,8 +55,6 @@ public class Usuario implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-
 
 
     public static class Roles {

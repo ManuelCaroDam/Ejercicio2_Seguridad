@@ -1,7 +1,6 @@
 package com.monumentos.monumentos.usuario.controlador;
 
 import com.monumentos.monumentos.seguridad.jwt.JwtProvider;
-import com.monumentos.monumentos.usuario.modelo.Usuario;
 import com.monumentos.monumentos.usuario.servicio.UsuarioServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
