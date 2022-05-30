@@ -27,5 +27,4 @@ public class UsuarioServicio extends ServicioBase <Usuario, Long, UsuarioReposit
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build());
     }
-
 }
