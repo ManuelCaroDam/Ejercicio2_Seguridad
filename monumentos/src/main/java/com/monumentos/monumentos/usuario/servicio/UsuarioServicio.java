@@ -1,6 +1,7 @@
 package com.monumentos.monumentos.usuario.servicio;
 
 import com.monumentos.monumentos.usuario.controlador.NewUserRequest;
+
 import com.monumentos.monumentos.usuario.modelo.Usuario;
 import com.monumentos.monumentos.usuario.repositorio.UsuarioRepositorio;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class UsuarioServicio extends ServicioBase <Usuario, Long, UsuarioReposit
 
     public Usuario nuevoUsuario(NewUserRequest request) {
 
-        return save(Usuario.builder().build()
+        return save(Usuario.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build());
