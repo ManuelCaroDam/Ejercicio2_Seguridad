@@ -19,23 +19,21 @@ public class Usuario implements UserDetails {
 
     @Id @GeneratedValue
     private Long id;
-    private String password;
-    @Builder.Default
-    private String role = Roles.ROLE_USER;
 
     @Column(unique = true)
     private String username;
 
+    private String password;
+
+    @Builder.Default
+    private String role = Roles.ROLE_USER;
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(
-                new SimpleGrantedAuthority("Role_"+role)
+                new SimpleGrantedAuthority(Roles.ROLE_PREFIX+role)
         );
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
     }
 
     @Override
@@ -58,10 +56,16 @@ public class Usuario implements UserDetails {
         return true;
     }
 
+
+
+
     public static class Roles {
 
         public static final String ROLE_USER = "USER";
-        public static final String ROLE_AMIN = "ADMIN";
+        public static final String ROLE_ADMIN = "ADMIN";
+        public static final String ROLE_PREFIX = "ROLE_";
+
 
     }
+
 }
