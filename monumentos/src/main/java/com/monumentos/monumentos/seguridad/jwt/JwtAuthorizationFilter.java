@@ -55,7 +55,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             }
 
         } catch (Exception ex) {
-            // Informar en el log
+
             log.info("No se ha podido establecer el contexto de seguridad (" + ex.getMessage() + ")");
         }
 
