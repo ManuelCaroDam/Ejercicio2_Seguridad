@@ -2,7 +2,6 @@ package com.monumentos.monumentos.seguridad.jwt;
 
 import com.monumentos.monumentos.usuario.modelo.Usuario;
 import com.monumentos.monumentos.usuario.servicio.UsuarioServicio;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -11,7 +10,6 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -67,7 +65,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
     }
 
     private String getJwtFromRequest(HttpServletRequest request) {
-        // Authorization: Bearer header.payload.signature
+
         String bearerToken = request.getHeader(JwtProvider.TOKEN_HEADER);
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith(JwtProvider.TOKEN_PREFIX)) {
             return bearerToken.substring(JwtProvider.TOKEN_PREFIX.length());
