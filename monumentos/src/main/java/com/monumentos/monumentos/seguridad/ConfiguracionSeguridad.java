@@ -35,11 +35,7 @@ public class ConfiguracionSeguridad
                                     .createDelegatingPasswordEncoder());
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories
-                .createDelegatingPasswordEncoder();
-    }
+
 
 
     @Bean
